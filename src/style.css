@@ -1,0 +1,209 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+    overflow-x: scroll;
+}
+
+:root {
+    --primaryColor: #f4f4f4;
+    --secondaryColor: #8EC6C5;
+    --secondaryColorbutDarker: #236b6a3b;
+    --tertiaryColor: #6983AA;
+    --accentColor: #8566AA;
+    --backgroundColor: rgba(19, 182, 204, 0.8);
+    --titleFontSize: 2em;
+    --maxwidthFactor: max(50vw,max(750px, 450px));
+}
+
+body {
+    background-image: url("../src/img/restaurant.jpg");
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+    box-sizing: border-box;
+}
+
+ul.header {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondaryColor);
+    height: 7.5vh;
+    align-items: center;
+    margin-bottom: 0;
+    
+}
+
+ul>* {
+    transition: margin-bottom .2s ease-in-out;
+}
+
+ul>*:hover {
+    margin-bottom: 0.5em;
+}
+
+.tab {
+    font-size: var(--titleFontSize);
+    padding: 0 1rem;
+}
+
+.tab.active {
+    border-bottom: solid .2em var(--accentColor);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    min-height: 86.5vh;
+}
+
+.home {
+    max-width: var(--maxwidthFactor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--backgroundColor);
+    font-size: 1.5em;
+}
+
+.home>* {
+    animation: fadeIn ease 1s;
+}
+
+.home__title {
+    font-family: 'Ms Madi', cursive;
+    font-size: min(10vw, 5em);
+    margin: 0;
+    padding: .3em 0;
+    text-align: center;
+}
+
+.home__tagline {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.home__desc {
+    max-width: 80%;
+}
+
+.menu {
+    background-color: var(--backgroundColor);
+    width: var(--maxwidthFactor);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu>* {
+    animation: fadeIn ease 1s;
+}
+
+.menu>*:not(:first-child) {
+    background-color: rgba(105, 131, 170, 0.8);
+}
+
+.menu>*>*>img{
+    width: clamp(100px, 525px, 50vw);
+}
+
+.menuItemOne,
+.menuItemTwo,
+.menuItemThree {
+    display: flex;
+    margin-bottom: .5rem;
+    gap: 1em;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.menuItemOne,
+.menuItemTwo {
+    border-bottom: solid 2px black;
+}
+
+.menuItemOne {
+    padding: 0.5rem 0;
+    padding-left: .5rem;
+}
+
+.menuItemTwo {
+    padding-bottom: .5rem;
+}
+
+.menu>*>*>*>h3 {
+    font-size: 1.5em;
+}
+
+.menu>*>*>*>p {
+    font-size: 1.269em;
+    max-width: 340px;
+}
+
+.menu__title {
+    font-size: calc(var(--titleFontSize) + .5em);
+}
+
+.contact {
+    background-color: var(--backgroundColor);
+    width: var(--maxwidthFactor);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact>* {
+    animation: fadeIn ease 1s;
+}
+
+.contact__title {
+    font-size: calc(var(--titleFontSize) + .5em);
+}
+
+.contactHolder {
+    width: 100%;
+    max-width: var(--maxwidthFactor);
+    text-align: center;
+}
+
+.contactHolder>* {
+    margin-bottom: .5rem;
+    font-size: 1.5em;
+    font-weight: 500;
+    max-width: inherit;
+}
+
+.numberHolder,
+.restaurantPlace {
+    display: flex;
+    align-items: center;
+    margin-left: 6.5vw;
+}
+
+img.destImg {
+    width: clamp(50%, 700px, 50vw);
+}
+
+.footer {
+    background-color: var(--secondaryColor);
+    font-size: 1.5em;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
